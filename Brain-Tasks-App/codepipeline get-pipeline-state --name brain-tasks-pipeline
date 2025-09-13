@@ -1,0 +1,60 @@
+{
+    "pipelineName": "brain-tasks-pipeline",
+    "pipelineVersion": 1,
+    "stageStates": [
+        {
+            "stageName": "Source",
+            "inboundExecutions": [],
+            "inboundTransitionState": {
+                "enabled": true
+            },
+            "actionStates": [
+                {
+                    "actionName": "SourceAction",
+                    "latestExecution": {
+                        "actionExecutionId": "8459ffe6-51e6-4d6d-a344-b7e77c3ae176",
+                        "status": "Failed",
+                        "lastStatusChange": "2025-09-13T17:09:17.120000+00:00",
+                        "errorDetails": {
+                            "code": "JobFailed",
+                            "message": "[GitHub] Upload to S3 failed with the following error: User: arn:aws:sts::273354652901:assumed-role/CodePipelineServiceRole/1757783352815 is not authorized to perform: s3:PutObject on resource: \"arn:aws:s3:::brain-tasks-pipeline-artifacts-123456789/brain-tasks-pipeline/SourceOutp/qaYRgZU\" because no identity-based policy allows the s3:PutObject action (Service: Amazon S3; Status Code: 403; Error Code: AccessDenied; Request ID: RC6E2J3RPQYRDJQ7; S3 Extended Request ID: ZZsiSN4ZLO9n+pFbxI2kCzZZOtOlOA+FDQ4eq/kkmjmpMLGacQhOqdT0F7cFDxmyGnxQb8PTwrs=; Proxy: null) (Service: null; Status Code: 0; Error Code: null; Request ID: null; S3 Extended Request ID: null; Proxy: null)"
+                        }
+                    },
+                    "entityUrl": "https://us-east-1.console.aws.amazon.com/codesuite/settings/connections/redirect?connectionArn=arn:aws:codeconnections:us-east-1:273354652901:connection/a4c43db8-33dc-4f30-aa96-334c83feb587&referenceType=BRANCH&FullRepositoryId=Vennilavan12/Brain-Tasks-App&Branch=main"
+                }
+            ],
+            "latestExecution": {
+                "pipelineExecutionId": "ef17391c-4b87-4e10-be7b-cb63dff26105",
+                "status": "Failed"
+            }
+        },
+        {
+            "stageName": "Build",
+            "inboundExecutions": [],
+            "inboundTransitionState": {
+                "enabled": true
+            },
+            "actionStates": [
+                {
+                    "actionName": "BuildAction",
+                    "entityUrl": "https://console.aws.amazon.com/codebuild/home?region=us-east-1#/projects/brain-tasks-build/view"
+                }
+            ]
+        },
+        {
+            "stageName": "Deploy",
+            "inboundExecutions": [],
+            "inboundTransitionState": {
+                "enabled": true
+            },
+            "actionStates": [
+                {
+                    "actionName": "DeployAction",
+                    "entityUrl": "https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions/brain-tasks-deploy"
+                }
+            ]
+        }
+    ],
+    "created": "2025-09-13T16:55:55.138000+00:00",
+    "updated": "2025-09-13T16:55:55.138000+00:00"
+}
